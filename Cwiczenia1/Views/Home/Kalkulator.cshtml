@@ -1,0 +1,12 @@
+﻿@model Cwiczenia1.Models.Kalkulator;
+@{
+    ViewData["Title"] = "Kalkulator";
+}
+<h1>Kalkulator</h1>
+<form action="Kalkulator">
+    <input type="number" asp-for="firstNumber" />
+    @Html.DropDownListFor(model => model.Symbol, new SelectList(new string[] {"+", "-", "*", "/"}, "+"), htmlAttributes: new { @class = "form-control" })
+    <input type="number" asp-for="secondNumber" />
+    <input type="submit" />
+</form>
+@ViewBag.Wynik
